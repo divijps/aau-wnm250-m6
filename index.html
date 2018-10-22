@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Module 6</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+	<style type="text/css">
+		ul{
+			list-style-type: none;
+			display: inline;
+			text-decoration-style: none;
+		}
+		li{
+			display: inline;
+		 text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<div id="nav" onmouseover = "mouseOver()"
+	onmouseout="mouseOut()" >
+			<ul>
+                <li id="one"><a href="#">ONE</a></li>
+                <li id="two"><a href="#">TWO</a></li>
+                <li id="three"><a href="#">THREE</a></li>
+                <li id="four"><a href="#">FOUR</a></li>
+            </ul>
+		</div>
+
+	<p id="p1">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<button onclick="replacer()">Replace the A</button>
+
+
+	<p id="p2">
+		Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. Faucibus purus in massa tempor nec feugiat nisl. Tellus cras adipiscing enim eu turpis egestas pretium. Posuere lorem ipsum dolor sit amet consectetur. Facilisi nullam vehicula ipsum a arcu cursus vitae. Faucibus scelerisque eleifend donec pretium vulputate. Est lorem ipsum dolor sit amet. Et ligula ullamcorper malesuada proin libero. Massa vitae tortor condimentum lacinia quis vel eros donec. Integer enim neque volutpat ac. Dictum at tempor commodo ullamcorper a lacus vestibulum sed. Ac turpis egestas sed tempus urna. Leo vel fringilla est ullamcorper eget.
+	</p>
+
+	<button onclick="slicer()">Slice 6 characters</button>
+
+	<p id="result"></p>
+
+	<p id="p3">
+		Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc. Amet risus nullam eget felis. Justo donec enim diam vulputate ut pharetra sit amet aliquam. Sem et tortor consequat id. Lacinia at quis risus sed vulputate odio. Mattis enim ut tellus elementum sagittis vitae. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Ornare quam viverra orci sagittis eu volutpat odio. Mauris augue neque gravida in fermentum et. Risus sed vulputate odio ut enim blandit volutpat maecenas volutpat. Duis ultricies lacus sed turpis tincidunt.
+	</p>
+	<button onclick="attributer()">Change family and color!</button>
+
+	<script>
+
+
+		document.getElementById("p3").style.fontSize = "15px";
+		document.getElementById("p3").style.textAlign = "center";
+		document.getElementById("p3").style.fontFamily = "Roboto, sans-serif";
+		document.getElementById("p3").style.color = "red";
+
+		function mouseOver(){
+			document.getElementById("one").style.backgroundColor = "green";
+			document.getElementById("two").style.backgroundColor = "green";
+			document.getElementById("three").style.backgroundColor = "green";
+			document.getElementById("four").style.backgroundColor = "green";
+		}
+
+		function mouseOut() {
+			document.getElementById("one").style.backgroundColor = "white";
+			document.getElementById("two").style.backgroundColor = "white";
+			document.getElementById("three").style.backgroundColor = "white";
+			document.getElementById("four").style.backgroundColor = "white";
+		}
+
+
+		function replacer(){
+
+			var inWrd = document.getElementById("p1").innerHTML
+			var outWrd = inWrd.replace("a", "ford");
+			document.getElementById("p1").innerHTML = outWrd;
+			
+		}
+
+		function slicer(){
+
+			var inStr = document.getElementById("p2").innerHTML;
+			var outStr = inStr.slice(100,106);
+			document.getElementById("result").innerHTML = outStr;
+			
+		}
+		
+		function attributer(){
+
+			document.getElementById("p3").setAttribute("style", "text-align:center; font-family:'Raleway', sans-serif;");
+			document.getElementById("p3").removeAttribute("color");
+
+		}
+
+	</script>
+
+</body>
+</html>
